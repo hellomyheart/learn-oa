@@ -22,6 +22,11 @@
 
         <!--        模块依赖-->
 
+        <dependency>
+            <groupId>cn.hellomyheart</groupId>
+            <artifactId>learn-oa-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
 
 

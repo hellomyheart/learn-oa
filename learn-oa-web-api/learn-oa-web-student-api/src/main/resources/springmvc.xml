@@ -42,7 +42,7 @@
     <bean id="convertorService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
             <list>
-                <bean class="CustomerDateConvert"/>
+                <bean class="cn.hellomyheart.learn.oa.student.converter.CustomerDateConvert"/>
 
             </list>
         </property>

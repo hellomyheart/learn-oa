@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hellomyheart.learn.oa.teacher.mapper.TQuestionMapper">
+  <resultMap id="BaseResultMap" type="cn.hellomyheart.learn.oa.domain.TQuestion">
+    <!--@mbg.generated-->
+    <!--@Table t_question-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="u_no" jdbcType="VARCHAR" property="uNo" />
+    <result column="question" jdbcType="VARCHAR" property="question" />
+    <result column="answer" jdbcType="VARCHAR" property="answer" />
+    <result column="qtype" jdbcType="VARCHAR" property="qtype" />
+    <result column="star" jdbcType="INTEGER" property="star" />
+    <result column="flag" jdbcType="VARCHAR" property="flag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, u_no, question, answer, qtype, star, flag
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from t_question
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from t_question
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.hellomyheart.learn.oa.domain.TQuestion" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_question (u_no, question, answer, 
+      qtype, star, flag)
+    values (#{uNo,jdbcType=VARCHAR}, #{question,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, 
+      #{qtype,jdbcType=VARCHAR}, #{star,jdbcType=INTEGER}, #{flag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.hellomyheart.learn.oa.domain.TQuestion" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_question
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uNo != null">
+        u_no,
+      </if>
+      <if test="question != null">
+        question,
+      </if>
+      <if test="answer != null">
+        answer,
+      </if>
+      <if test="qtype != null">
+        qtype,
+      </if>
+      <if test="star != null">
+        star,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uNo != null">
+        #{uNo,jdbcType=VARCHAR},
+      </if>
+      <if test="question != null">
+        #{question,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null">
+        #{answer,jdbcType=VARCHAR},
+      </if>
+      <if test="qtype != null">
+        #{qtype,jdbcType=VARCHAR},
+      </if>
+      <if test="star != null">
+        #{star,jdbcType=INTEGER},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.hellomyheart.learn.oa.domain.TQuestion">
+    <!--@mbg.generated-->
+    update t_question
+    <set>
+      <if test="uNo != null">
+        u_no = #{uNo,jdbcType=VARCHAR},
+      </if>
+      <if test="question != null">
+        question = #{question,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null">
+        answer = #{answer,jdbcType=VARCHAR},
+      </if>
+      <if test="qtype != null">
+        qtype = #{qtype,jdbcType=VARCHAR},
+      </if>
+      <if test="star != null">
+        star = #{star,jdbcType=INTEGER},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.hellomyheart.learn.oa.domain.TQuestion">
+    <!--@mbg.generated-->
+    update t_question
+    set u_no = #{uNo,jdbcType=VARCHAR},
+      question = #{question,jdbcType=VARCHAR},
+      answer = #{answer,jdbcType=VARCHAR},
+      qtype = #{qtype,jdbcType=VARCHAR},
+      star = #{star,jdbcType=INTEGER},
+      flag = #{flag,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

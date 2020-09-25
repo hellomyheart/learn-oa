@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hellomyheart.learn.oa.student.mapper.TExercisesMapper">
+  <resultMap id="BaseResultMap" type="cn.hellomyheart.learn.oa.domain.TExercises">
+    <!--@mbg.generated-->
+    <!--@Table t_exercises-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+    <result column="equestion" jdbcType="VARCHAR" property="equestion" />
+    <result column="eanswer" jdbcType="VARCHAR" property="eanswer" />
+    <result column="flag" jdbcType="VARCHAR" property="flag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, category, equestion, eanswer, flag
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from t_exercises
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from t_exercises
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.hellomyheart.learn.oa.domain.TExercises" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_exercises (category, equestion, eanswer, 
+      flag)
+    values (#{category,jdbcType=VARCHAR}, #{equestion,jdbcType=VARCHAR}, #{eanswer,jdbcType=VARCHAR}, 
+      #{flag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.hellomyheart.learn.oa.domain.TExercises" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_exercises
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="category != null">
+        category,
+      </if>
+      <if test="equestion != null">
+        equestion,
+      </if>
+      <if test="eanswer != null">
+        eanswer,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="equestion != null">
+        #{equestion,jdbcType=VARCHAR},
+      </if>
+      <if test="eanswer != null">
+        #{eanswer,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.hellomyheart.learn.oa.domain.TExercises">
+    <!--@mbg.generated-->
+    update t_exercises
+    <set>
+      <if test="category != null">
+        category = #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="equestion != null">
+        equestion = #{equestion,jdbcType=VARCHAR},
+      </if>
+      <if test="eanswer != null">
+        eanswer = #{eanswer,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.hellomyheart.learn.oa.domain.TExercises">
+    <!--@mbg.generated-->
+    update t_exercises
+    set category = #{category,jdbcType=VARCHAR},
+      equestion = #{equestion,jdbcType=VARCHAR},
+      eanswer = #{eanswer,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

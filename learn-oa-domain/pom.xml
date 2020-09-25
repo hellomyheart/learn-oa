@@ -22,6 +22,20 @@
             <artifactId>learn-oa-commons</artifactId>
             <version>${parent.version}</version>
         </dependency>
+
+
+
+        <!--Lombok Begin-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!--Lombok End-->
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
