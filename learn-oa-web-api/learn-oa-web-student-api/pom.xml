@@ -10,10 +10,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>learn-oa-wev-student-api</artifactId>
+    <artifactId>learn-oa-web-student-api</artifactId>
     <packaging>war</packaging>
 
-    <name>learn-oa-wev-student-api</name>
+    <name>learn-oa-web-student-api</name>
     <description>学生管理api</description>
 
 </project>
